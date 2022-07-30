@@ -68,9 +68,12 @@ npm run dev
 Go to http://localhost:3000/. If you're seeing *"Welcome to Next.js!"* you're good to go.
 
 ### A Basic UI
-Let's not spend too much time on doing any CSS work. Let's clone the UI I've already set up for you:
+Let's not spend too much time on doing any markup work. Just [take the code directly](https://github.com/nooomski/cosmjs-tutorial/blob/f609f711ee76ca858db4b524836438d89c57bdcc/components/SimpleUI.tsx). Or clone the entire repo and checkout the right commit:
+
 ```shell
-git clone https://github.com/nooomski/cosmjs-tutorial/ ... ?
+git clone https://github.com/nooomski/cosmjs-tutorial
+cd cosmjs-tutorial
+git checkout f609f711ee
 ```
 
 This should have created a new `components` folder in your working directory. Now let's get rid of the `Next.js` landing page and replace it with this UI. Remove all the code in `pages/index.ts` and replace it with the following:
