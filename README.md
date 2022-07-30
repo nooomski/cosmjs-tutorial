@@ -1,0 +1,1 @@
+This is a simple UI to get started with CosmJS & Keplr. This was created as a HackATOM Seoul 2022 workshop. You can find detailed instructions in [instructions.md](./instructions.md).
