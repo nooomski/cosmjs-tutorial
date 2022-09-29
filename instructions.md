@@ -372,6 +372,6 @@ You made it! If you didn't get this far, the final outcome of this tutorial is a
 
 2. If you are building your own SDK module, you will need to create custom types for your queries and messages. There are several ways to do this. The easiest tool available at the moment is [Telescope](https://github.com/osmosis-labs/telescope). We also have a tutorial for an alternative method up on the [Developer Portal](https://tutorials.cosmos.network/academy/5-cosmjs/create-custom.html).
 
-And finally, if you really like this stuff, we have a 7 month free training program called the Interchain Developer Program. You will learn everything about Cosmos like building your own chain, running a validator, the Inter Blockchain Communication protocol and CosmJS. We run several of these throughout the year, and I highly recommend you [sign up here](https://academy.cosmos.network/)!
+And finally, if you really like this stuff, we have a free 7 week training program called the Interchain Developer Program. You will learn everything about Cosmos like building your own chain, running a validator, the Inter Blockchain Communication protocol and CosmJS. We run several of these throughout the year, and I highly recommend you [sign up here](https://academy.cosmos.network/)!
 
 You can follow me on twitter [@Gnomeskiii](https://twitter.com/Gnomeskiii)
