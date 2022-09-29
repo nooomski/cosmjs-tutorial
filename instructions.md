@@ -124,7 +124,7 @@ A node is just a server running the binary that runs the chain. A node carries t
 Important to note is that nodes are often **pruned**, otherwise they would be very large and expensive to maintain (up to several terrabytes for some chains!). This means that they generally don't contain a lot of historical data, but only the most recent state of the blockchain. Practically, this means you generally can't ask things like "what was the balance of this address at blockheight xxx?", but you can always ask it what the current balance is, for example.  
 
 ### Where can I find these nodes?
-For the Cosmos Hub testnet you'll need to connect to one of [these nodes](https://github.com/cosmos/testnets/tree/master/v7-theta/public-testnet#endpoints). I'll be using `https://rpc.sentry-01.theta-testnet.polypore.xyz`. 
+For the Cosmos Hub testnet you'll need to connect to one of [these nodes](https://github.com/cosmos/testnets/tree/master/v7-theta/public-testnet#endpoints). I'll be using `https://rpc.sentry-02.theta-testnet.polypore.xyz`. 
 
 There are public nodes available for most chains, there's a nice overview over at the [Chain Registry](https://github.com/cosmos/chain-registry/), but please note these are for development purposes only. If too many people use these nodes, they will likely get congested and taken down. App developers are expected to take care of their own infrastructure needs by either running a node yourself or renting on from a node provider.
 
@@ -132,7 +132,7 @@ There are public nodes available for most chains, there's a nice overview over a
 Add your endpoint as the `rpcUrl` in `index.tsx`:  
 
 ```typescript
-rpcUrl="https://rpc.sentry-01.theta-testnet.polypore.xyz" />
+rpcUrl="https://rpc.sentry-02.theta-testnet.polypore.xyz" />
 ```
 
 Let's fetch some data to display by adding a request for the `ChainId` to `components/SimpleUI.tsx`. Add the following code below the constructor:
@@ -199,8 +199,8 @@ Now we need to add the metadata that Keplr needs to actually connect to the bloc
 getTestnetChainInfo = (): ChainInfo => ({
     chainId: "theta-testnet-001",
     chainName: "theta-testnet-001",
-    rpc: "https://rpc.sentry-01.theta-testnet.polypore.xyz/",
-    rest: "https://rest.sentry-01.theta-testnet.polypore.xyz/",
+    rpc: "https://rpc.sentry-02.theta-testnet.polypore.xyz/",
+    rest: "https://rest.sentry-02.theta-testnet.polypore.xyz/",
     bip44: {
         coinType: 118,
     },
@@ -318,7 +318,7 @@ We're going to replace the `onSendClicked` function to do the following things:
 ```typescript
 onSendClicked = async(e: MouseEvent<HTMLButtonElement>) => {
     // Get the current state and amount of tokens that we want to transfer
-    const { denom, toAmount, toAddress, myAddress } = this.state
+    const { denom, toSend, toAddress, myAddress } = this.state
 
     // Create the signing client
     const offlineSigner: OfflineSigner =
@@ -338,7 +338,7 @@ onSendClicked = async(e: MouseEvent<HTMLButtonElement>) => {
         [
             {
                 denom: denom,
-                amount: toAmount,
+                amount: toSend,
             },
         ],
         {
